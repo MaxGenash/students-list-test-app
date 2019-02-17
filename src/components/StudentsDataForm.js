@@ -8,15 +8,13 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Grid from "@material-ui/core/Grid";
 
-class StudentDataForm extends React.Component {
+class StudentsDataForm extends React.Component {
   static defaultProps = {
-    isOpen: true,
     isEditMode: false,
     initialData: {}
   };
 
   static propTypes = {
-    isOpen: PropTypes.bool.isRequired,
     isEditMode: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
     onSubmit: PropTypes.func.isRequired,
@@ -28,10 +26,10 @@ class StudentDataForm extends React.Component {
 
     this.state = {
       form: {
-        firstName: "",
-        lastName: "",
-        birthdayDate: null,
-        ...props.initialData
+        // Note that we don't use spread operator here because initialData may contain redundant stuff
+        firstName: props.initialData.firstName || '',
+        lastName: props.initialData.lastName || '',
+        birthdayDate: props.initialData.birthdayDate || '',
       }
     };
   }
@@ -47,17 +45,18 @@ class StudentDataForm extends React.Component {
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit(this.state.form);
+    this.props.onSubmit(
+      {
+        ...this.props.initialData,  // pass the data (like recordId) that we didn't keep in the state
+        ...this.state.form
+      }
+    );
   };
 
   render() {
-    const {isOpen, isEditMode, onClose} = this.props;
     return (
-      <Dialog
-        open={isOpen}
-        onClose={onClose}
-      >
-        <DialogTitle> {isEditMode ? 'Edit ' : 'Add a new '} student </DialogTitle>
+      <Dialog open={true} onClose={this.props.onClose}>
+        <DialogTitle> {this.props.isEditMode ? 'Edit ' : 'Add a new '} student </DialogTitle>
         <DialogContent>
           <form id="grades-data-form" onSubmit={this.onFormSubmit}>
             <Grid container spacing={24}>
@@ -84,7 +83,7 @@ class StudentDataForm extends React.Component {
                   required
                   type="date"
                   label="Birthday Date"
-                  value={this.state.form.birthdayDate}
+                  value={this.state.form.birthdayDate.split('T')[0]}
                   onChange={this.setFormData.bind(this, 'birthdayDate')}
                   InputLabelProps={{
                     shrink: true,
@@ -96,7 +95,7 @@ class StudentDataForm extends React.Component {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onClose} color="primary">
+          <Button onClick={this.props.onClose} color="primary">
             Cancel
           </Button>
           <Button color="primary" type="submit" form="grades-data-form">
@@ -108,4 +107,4 @@ class StudentDataForm extends React.Component {
   }
 }
 
-export default StudentDataForm;
+export default StudentsDataForm;

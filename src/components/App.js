@@ -14,6 +14,7 @@ const styles = theme => ({
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
+    minWidth: '320px',
     backgroundColor: theme.palette.background.paper,
   },
   pageContainer: {
