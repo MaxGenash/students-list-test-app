@@ -73,7 +73,10 @@ class GradesPage extends React.Component {
       responsive: 'scroll',
       customToolbar: () => (
         <Tooltip title="Add a new record">
-          <IconButton onClick={() => this.props.openGradesDataForm({ isEditMode: false })}>
+          <IconButton
+            onClick={() => this.props.openGradesDataForm({ isEditMode: false })}
+            data-test="btn-add-grade-record"
+          >
             <Icon> add </Icon>
           </IconButton>
         </Tooltip>
@@ -96,6 +99,7 @@ class GradesPage extends React.Component {
                   <IconButton
                     className={this.props.classes.actionButton}
                     onClick={() => this.props.openGradesDataForm(gradesDataFormProps)}
+                    data-test="btn-edit-grade-record"
                   >
                     <Icon> edit </Icon>
                   </IconButton>
@@ -104,6 +108,7 @@ class GradesPage extends React.Component {
                   <IconButton
                     className={this.props.classes.actionButton}
                     onClick={() => this.props.deleteGradeRecords(recordId)}
+                    data-test="btn-delete-grade-record"
                   >
                     <Icon> delete </Icon>
                   </IconButton>
@@ -158,7 +163,7 @@ class GradesPage extends React.Component {
     }
 
     return (
-      <section>
+      <section data-test="grades-page">
         <MUIDataTable
           data={tableData}
           columns={this.getTableColumns()}

@@ -58,7 +58,7 @@ class StudentsDataForm extends React.Component {
       <Dialog open={true} onClose={this.props.onClose}>
         <DialogTitle> {this.props.isEditMode ? 'Edit ' : 'Add a new '} student </DialogTitle>
         <DialogContent>
-          <form id="grades-data-form" onSubmit={this.onFormSubmit}>
+          <form id="students-data-form" onSubmit={this.onFormSubmit} data-test="students-data-form">
             <Grid container spacing={24}>
               <Grid item xs={12}>
                 <TextField
@@ -67,6 +67,7 @@ class StudentsDataForm extends React.Component {
                   value={this.state.form.firstName}
                   onChange={this.setFormData.bind(this, 'firstName')}
                   fullWidth
+                  inputProps={{'data-test': 'students-data-form-firstName'}}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -76,6 +77,7 @@ class StudentsDataForm extends React.Component {
                   value={this.state.form.lastName}
                   onChange={this.setFormData.bind(this, 'lastName')}
                   fullWidth
+                  inputProps={{'data-test': 'students-data-form-lastName'}}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -85,20 +87,19 @@ class StudentsDataForm extends React.Component {
                   label="Birthday Date"
                   value={this.state.form.birthdayDate.split('T')[0]}
                   onChange={this.setFormData.bind(this, 'birthdayDate')}
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
+                  InputLabelProps={{ shrink: true }}
                   fullWidth
+                  inputProps={{'data-test': 'students-data-form-birthdayDate'}}
                 />
               </Grid>
             </Grid>
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.props.onClose} color="primary">
+          <Button onClick={this.props.onClose} color="primary" data-test="students-data-btn-cancel">
             Cancel
           </Button>
-          <Button color="primary" type="submit" form="grades-data-form">
+          <Button color="primary" type="submit" form="students-data-form" data-test="students-data-btn-submit">
             Submit
           </Button>
         </DialogActions>

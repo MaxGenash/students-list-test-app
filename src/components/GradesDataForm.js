@@ -64,7 +64,7 @@ class GradesDataForm extends React.Component {
       <Dialog open={true} onClose={this.props.onClose}>
         <DialogTitle> {this.props.isEditMode ? 'Edit ' : 'Add a new '} grade </DialogTitle>
         <DialogContent>
-          <form id="grades-data-form" onSubmit={this.onFormSubmit}>
+          <form id="grades-data-form" onSubmit={this.onFormSubmit} data-test="grades-data-form">
             <Grid container spacing={24}>
               <Grid item xs={12}>
                 <FormControl fullWidth>
@@ -74,7 +74,10 @@ class GradesDataForm extends React.Component {
                     required
                     value={this.state.form.studentId}
                     onChange={this.setFormData.bind(this, 'studentId')}
-                    inputProps={{ id: 'student-input' }}
+                    inputProps={{
+                      'id': 'student-input',
+                      'data-test': 'grades-data-form-studentId'
+                    }}
                   >
                     <option key="none" value="" />
                     {Object.entries(this.props.studentNamesById).map(([id, name]) => (
@@ -91,6 +94,7 @@ class GradesDataForm extends React.Component {
                     value={this.state.form.profession}
                     onChange={this.setFormData.bind(this, 'profession')}
                     fullWidth
+                    inputProps={{'data-test': 'grades-data-form-profession'}}
                   />
                 </FormControl>
               </Grid>
@@ -102,9 +106,8 @@ class GradesDataForm extends React.Component {
                     label="Test Date"
                     value={this.state.form.testDate.split('T')[0]}
                     onChange={this.setFormData.bind(this, 'testDate')}
-                    InputLabelProps={{
-                      shrink: true,
-                    }}
+                    InputLabelProps={{shrink: true}}
+                    inputProps={{'data-test': 'grades-data-form-testDate'}}
                   />
                 </FormControl>
               </Grid>
@@ -116,7 +119,10 @@ class GradesDataForm extends React.Component {
                     required
                     value={this.state.form.grade}
                     onChange={this.setFormData.bind(this, 'grade')}
-                    inputProps={{ id: 'grade-input' }}
+                    inputProps={{
+                      'id': 'grade-input',
+                      'data-test': 'grades-data-form-grade'
+                    }}
                   >
                     <option key="none" value="" />
                     <option key="A" value="A"> A </option>
@@ -132,10 +138,10 @@ class GradesDataForm extends React.Component {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={this.props.onClose} color="primary">
+          <Button onClick={this.props.onClose} color="primary" data-test="grades-data-btn-cancel">
             Cancel
           </Button>
-          <Button color="primary" type="submit" form="grades-data-form">
+          <Button color="primary" type="submit" form="grades-data-form" data-test="grades-data-btn-submit">
             Submit
           </Button>
         </DialogActions>
