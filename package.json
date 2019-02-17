@@ -2,11 +2,14 @@
   "name": "students-list-test-app",
   "author": "Max Henash",
   "private": true,
+  "homepage": "https://maxgenash.github.io/students-list-test-app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "cy:open": "cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app",
@@ -21,6 +24,7 @@
     "cypress": "^3.1.5",
     "eslint": "5.12.0",
     "eslint-plugin-cypress": "^2.2.0",
+    "gh-pages": "^2.0.1",
     "react-scripts": "^2.1.5"
   },
   "dependencies": {
