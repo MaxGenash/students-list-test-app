@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/MaxGenash/students-list-test-app/precache-manifest.4d4ab536ed6767743a07c62363d69992.js"
+  "/MaxGenash/students-list-test-app/precache-manifest.03702de521cf2d146d4cfb4dd1e15a6e.js"
 );
 
 workbox.clientsClaim();

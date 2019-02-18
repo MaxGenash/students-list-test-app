@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/MaxGenash/students-list-test-app/static/js/runtime~main.84d06346.js"
   },
   {
-    "revision": "a35d8d11676e07329a9e",
-    "url": "/MaxGenash/students-list-test-app/static/js/main.a35d8d11.chunk.js"
+    "revision": "5134b91ab9d19a83a4bd",
+    "url": "/MaxGenash/students-list-test-app/static/js/main.5134b91a.chunk.js"
   },
   {
     "revision": "544fab581b6f4a26f362",
     "url": "/MaxGenash/students-list-test-app/static/js/2.544fab58.chunk.js"
   },
   {
-    "revision": "945411523db2f1e98b7eab238c92b92a",
+    "revision": "c3c2cd92e57da80399f6f20e50454493",
     "url": "/MaxGenash/students-list-test-app/index.html"
   }
 ];
