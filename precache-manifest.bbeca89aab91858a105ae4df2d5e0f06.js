@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/MaxGenash/students-list-test-app/static/js/2.544fab58.chunk.js"
   },
   {
-    "revision": "c3c2cd92e57da80399f6f20e50454493",
+    "revision": "b6eaf80e10375bff33a5aa462b100edf",
     "url": "/MaxGenash/students-list-test-app/index.html"
   }
 ];
