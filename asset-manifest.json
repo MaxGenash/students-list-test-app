@@ -1,11 +1,11 @@
 {
-  "main.js": "/static/js/main.177b03f7.chunk.js",
-  "main.js.map": "/static/js/main.177b03f7.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
-  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/js/2.544fab58.chunk.js": "/static/js/2.544fab58.chunk.js",
-  "static/js/2.544fab58.chunk.js.map": "/static/js/2.544fab58.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.2a054bf6dd89fe23dadcf5be2b97bf29.js": "/precache-manifest.2a054bf6dd89fe23dadcf5be2b97bf29.js",
-  "service-worker.js": "/service-worker.js"
+  "main.js": "/students-list-test-app/static/js/main.1f829f2d.chunk.js",
+  "main.js.map": "/students-list-test-app/static/js/main.1f829f2d.chunk.js.map",
+  "runtime~main.js": "/students-list-test-app/static/js/runtime~main.0bf3e5f5.js",
+  "runtime~main.js.map": "/students-list-test-app/static/js/runtime~main.0bf3e5f5.js.map",
+  "static/js/2.544fab58.chunk.js": "/students-list-test-app/static/js/2.544fab58.chunk.js",
+  "static/js/2.544fab58.chunk.js.map": "/students-list-test-app/static/js/2.544fab58.chunk.js.map",
+  "index.html": "/students-list-test-app/index.html",
+  "precache-manifest.dec4c2a203e4a5006e0a8d61224a2e93.js": "/students-list-test-app/precache-manifest.dec4c2a203e4a5006e0a8d61224a2e93.js",
+  "service-worker.js": "/students-list-test-app/service-worker.js"
 }
